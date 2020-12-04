@@ -1,7 +1,7 @@
 # Specific files #
 ##########################
-php7_server/docker-compose.yml
-php5_server/docker-compose.yml
+#php7_server/docker-compose.yml
+#php5_server/docker-compose.yml
 
 # OS generated files #
 ######################
