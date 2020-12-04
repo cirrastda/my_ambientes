@@ -1,0 +1,33 @@
+d:
+cd /home/app
+rails new myapp && cd myapp
+bundle update && bundle install
+
+https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one
+
+rails generate rspec:install
+mkdir spec/factories
+
+rails g model Todo title:string created_by:string
+rails g model Item name:string done:boolean todo:references
+rails db:migrate
+
+bundle exec rspec #Test
+
+rails g controller Todos
+rails g controller Items
+mkdir spec/requests && touch spec/requests/{todos_spec.rb,items_spec.rb} 
+touch spec/factories/{todos.rb,items.rb}
+
+mkdir spec/support && touch spec/support/request_spec_helper.rb
+
+rubocop \
+  --require rubocop-faker \
+  --only Faker/DeprecatedArguments \
+  --auto-correct
+
+rails server -p $PORT -b 0.0.0.0
+
+bundle exec rake routes
+
+http://41abca52ed8f.ngrok.io

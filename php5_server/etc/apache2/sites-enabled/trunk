@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+	ServerName trunk.localhost
+	ServerAlias portaltrunk.localhost
+
+    	DocumentRoot /home/sistemas/portal_trunk/
+
+	ErrorLog ${APACHE_LOG_DIR}/trunk-error.log
+	CustomLog ${APACHE_LOG_DIR}/trunk-access.log combined
+
+</VirtualHost>

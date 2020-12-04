@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+    server_php5:
+        image: server_php5:v2
+        container_name: php5_server_dev2
+        restart: unless-stopped
+        volumes:
+            - D:/home/sistemas/dev_ambientes/php5_server/etc/apache2:/etc/apache2
+            - D:/home/sistemas/dev_ambientes/php5_server/etc/rsyslog.d:/etc/rsyslog.d
+            - D:/home/sistemas/dev_ambientes/php5_server/etc/resolv/resolv.conf:/etc/resolv.conf            
+            - d:/home/sistemas:/home/sistemas
+            - d:/Phonegap:/home/mobile
+            # Se o host for linux descomente essa linha para usar o localtime do host
+            # - /etc/localtime:/etc/localtime:ro 
+        ports:
+            - "80:80"

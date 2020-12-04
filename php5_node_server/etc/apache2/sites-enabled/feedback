@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+	ServerName feedback.localhost
+
+	DocumentRoot /home/sistemas/portal_feedback/
+
+	ErrorLog ${APACHE_LOG_DIR}/feedback-error.log
+	CustomLog ${APACHE_LOG_DIR}/feedback-access.log combined
+
+</VirtualHost>

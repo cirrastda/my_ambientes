@@ -1,0 +1,36 @@
+<VirtualHost *:80>
+	ServerName portal_guialog.localhost
+
+    	DocumentRoot /home/sistemas/portal_guialog/
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+        <Directory /home/sistemas/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+         <Directory /home/sistemas/portal>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+       <Directory /home/sistemas/portal/portal>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+	ErrorLog ${APACHE_LOG_DIR}/portal-error.log
+	CustomLog ${APACHE_LOG_DIR}/portal-access.log combined
+
+</VirtualHost>

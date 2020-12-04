@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+    server_php5:
+        image: server_php5:v1
+        container_name: php5_server_dev
+        restart: unless-stopped
+        volumes:
+            - ${PWD}/etc/apache2:/etc/apache2
+            - ${PWD}/etc/rsyslog.d:/etc/rsyslog.d
+            - ${PWD}/etc/resolv/resolv.conf:/etc/resolv.conf            
+            - PASTA/PARA/HOME:/home/sistemas
+            # Se o host for linux descomente essa linha para usar o localtime do host
+            # - /etc/localtime:/etc/localtime:ro 
+        ports:
+            - "80:80"

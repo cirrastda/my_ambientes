@@ -1,0 +1,8 @@
+<VirtualHost *:80>
+    	ServerName feedback.localhost
+    	DocumentRoot /home/sistemas/feedback
+            <Directory /home/sistemas/feedback>
+                    Options Indexes FollowSymLinks MultiViews
+                    AllowOverride All
+            </Directory>
+    </VirtualHost>

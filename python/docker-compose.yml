@@ -1,0 +1,18 @@
+# Use root/example as user/password credentials
+version: '3.3'
+
+services:
+  server_python:
+    image: server_python
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: python
+    restart: unless-stopped
+    volumes:
+      - D:/Projetos:/home/projetos
+      - D:/home/sistemas/dev_ambientes/php7_server/etc/rsyslog.d:/etc/rsyslog.d
+      - D:/home/sistemas:/home/sistemas
+      # Se o host for linux descomente essa linha para usar o localtime do host
+      # - /etc/localtime:/etc/localtime:ro 
+

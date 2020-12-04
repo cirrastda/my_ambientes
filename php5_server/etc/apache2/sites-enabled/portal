@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+	ServerName portal.localhost
+
+    	DocumentRoot /home/sistemas/portal/
+
+	ErrorLog ${APACHE_LOG_DIR}/portal-error.log
+	CustomLog ${APACHE_LOG_DIR}/portal-access.log combined
+
+</VirtualHost>

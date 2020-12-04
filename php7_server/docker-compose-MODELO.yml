@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  server_php7:
+    image: server_php7:v1
+    container_name: server_php7_dev
+    restart: unless-stopped
+    volumes:
+      - D:/home/sistemas/dev_ambientes/php7_server/etc/apache2:/etc/apache2
+      - D:/home/sistemas/dev_ambientes/php7_server/etc/rsyslog.d:/etc/rsyslog.d
+      - D:/home/sistemas:/home/sistemas
+      # Se o host for linux descomente essa linha para usar o localtime do host
+      # - /etc/localtime:/etc/localtime:ro 
+    ports:
+      - "8087:80"
+

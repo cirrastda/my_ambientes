@@ -1,0 +1,8 @@
+<VirtualHost *:80>
+	ServerName trunk.localhost
+	DocumentRoot /home/sistemas/trunk
+        <Directory /home/sistemas/trunk>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+        </Directory>
+</VirtualHost>
